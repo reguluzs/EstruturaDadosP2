@@ -1,4 +1,4 @@
-public class FilaVaziaEception extends RuntimeException {
+public class FilaVaziaException extends RuntimeException {
     public FilaVaziaException(String message) {
         super(message);
     }
