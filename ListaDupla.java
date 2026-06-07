@@ -20,6 +20,18 @@ public class ListaDupla {
         }
         tamanho++;
     }
+    
+    public void insereFim(Livro livro) {
+        NoDuplo novo = new NoDuplo(livro);
+        if (tamanho == 0) {
+            primeiro = ultimo = novo;
+        } else {
+            novo.setAnterior(ultimo);
+            ultimo.setSeguinte(novo);
+            ultimo = novo;
+        }
+        tamanho++;
+    }
 
     public Livro removePrimeiro() {
         if (tamanho == 0) return null;
@@ -29,6 +41,21 @@ public class ListaDupla {
         } else {
             primeiro = primeiro.getSeguinte();
             primeiro.setAnterior(null);
+        }
+        tamanho --;
+        return livro;
+    }
+
+    public Livro removeUltiumo() {
+        if (tamanho == 0) {
+            return null;
+        }
+        Livro livro = ultimo.getLivro();
+        if (tamanho == 1) {
+            primeiro = ultimo = null; 
+        } else {
+            ultimo = ultimo.getAnterior();
+            ultimo.setSeguinte(null);
         }
         tamanho --;
         return livro;
