@@ -2,7 +2,7 @@ public class Teste1 {
     public static void main(String[] args) {
         System.out.println("-- Teste 1 --");
         
-        ListaDupla lista = ListaDupla();
+        ListaDupla lista =  new ListaDupla();
 
         Livro livro1 = new Livro("123-12-1234-123-1", "algum livro aí", "eu mesmo", 2026);
         Livro livro2 = new Livro("321-21-4321-321-1", "o caminho dos reis", "brandon sanderson", 2003);
