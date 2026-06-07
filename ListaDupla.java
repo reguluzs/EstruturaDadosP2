@@ -46,7 +46,7 @@ public class ListaDupla {
         return livro;
     }
 
-    public Livro removeUltiumo() {
+    public Livro removeUltimo() {
         if (tamanho == 0) {
             return null;
         }
