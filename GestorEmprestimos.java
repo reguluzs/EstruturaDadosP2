@@ -5,7 +5,7 @@ public class GestorEmprestimos {
         this.filasEspera = new NossoHash<>();
     }
     
-    public void solicitarEMprestimo(String isbn, Usuario usuario, Catalogo catalogo) {
+    public void solicitarEmprestimo(String isbn, Usuario usuario, Catalogo catalogo) {
         Livro livro = catalogo.buscar(isbn);
         if (livro == null) {
             System.out.println("não achei o livro!");
@@ -14,7 +14,7 @@ public class GestorEmprestimos {
         }
         if (livro.isDisponivel()) {
             livro.setDisponivel(false);
-            System.out.println("foi realizado o emprestimo para: " + usuario.getNome() + "livro: " + livro.getTitulo());
+            System.out.println("foi realizado o emprestimo para: " + usuario.getNome() + " livro: " + livro.getTitulo());
         } else {
             Fila<Usuario> fila = filasEspera.get(isbn);
             if (fila == null) {
@@ -22,7 +22,7 @@ public class GestorEmprestimos {
                 filasEspera.put(isbn,fila);
             }
             fila.enfileira(usuario);
-            System.out.println(usuario.getNome() + "foi adicionado na fila de espera do livro " + livro.getTitulo());
+            System.out.println(usuario.getNome() + " foi adicionado na fila de espera do livro " + livro.getTitulo());
         }
     }
 
